@@ -18,6 +18,10 @@ namespace ImageGrabber {
                     }
                     catch (WebException w) {
                         Console.WriteLine($"{sourceFile} does not exist.");
+                        if (w.Status == WebExceptionStatus.Timeout)
+                        {
+                            //Do Retry/Handling Sequence Here.
+                        }
                     }
                 }
             }
